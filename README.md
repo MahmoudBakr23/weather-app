@@ -20,6 +20,8 @@ To get a local copy of the repository please run the following commands on your 
 - ```$ cd <folder>```
 - ```$ git clone https://github.com/MahmoudBakr23/weather-app.git ```
 - ```$ cd weather-app ```
+- ```$ npm run build ```
+And finally open ./dist/index.html file in your browser.
 
 ## Authors
 

@@ -11,6 +11,29 @@ const desc = document.querySelector('p');
 const any = document.querySelector('h5');
 const errorMsg = document.getElementById('error');
 
+function errorMsgs() {
+  errorMsg.innerHTML = `
+  'Name not found! Please try again.'
+`;
+}
+
+function displayData(data) {
+  mainTitle.innerHTML = `
+  ${data.name}
+`;
+  temp.innerHTML = `
+  ${Math.round(data.main.temp)} F
+`;
+  img.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+  img.classList.remove('d-none');
+  any.innerHTML = `
+  ${data.sys.country}
+`;
+  desc.innerHTML = `
+  The weather in your region is ${data.weather[0].description.toUpperCase()}!
+`;
+}
+
 searchForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -19,25 +42,10 @@ searchForm.addEventListener('submit', (e) => {
   async function getWeather() {
     const response = await fetch(wApi, { mode: 'cors' });
     if (response.status === 404) {
-      errorMsg.innerHTML = `
-                'Name not found! Please try again.'
-            `;
+      errorMsgs();
     } else {
       const myData = await response.json();
-      mainTitle.innerHTML = `
-                ${myData.name}
-            `;
-      temp.innerHTML = `
-                ${Math.round(myData.main.temp)} F
-            `;
-      img.src = `http://openweathermap.org/img/w/${myData.weather[0].icon}.png`;
-      img.classList.remove('d-none');
-      any.innerHTML = `
-                ${myData.sys.country}
-            `;
-      desc.innerHTML = `
-                The weather in your region is ${myData.weather[0].description.toUpperCase()}!
-            `;
+      displayData(myData);
     }
   }
   getWeather();
