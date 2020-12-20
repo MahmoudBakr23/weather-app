@@ -5,13 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weathry</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
-    <h1>What's your weather today!</h1>
+    <span class="lead text-danger" id="error"></span>
     <form id="search">
-        <input type="text" name="search" id="search-word">
-        <button type="submit" value="Search" id="search-btn">Search</button>
+        <input type="text" name="search" id="search-word" placeholder="Enter your city/state name:* ">
+        <button type="submit" value="Search" id="search-btn" class="btn btn-success"><i class="fas fa-search"></i></button>
     </form>
+    <section id="result">
+        <div class="result-header">
+            <h3></h3>
+            <h5></h5>
+            <h4></h4>
+            <img src="#" alt="weather icon" class="d-none">
+        </div>
+        <div class="result-body">
+            <p></p>
+        </div>
+    </section>
     <script src="./main.js"></script>
 </body>
 </html>

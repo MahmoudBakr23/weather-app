@@ -1,1 +1,51 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-image: url(../images/bg.jpg);
+  text-align: center;
+  padding: 1rem;
+  background-color: black;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+#search {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+#search input,
+#search button {
+  padding: 1rem;
+  border: 0;
+  outline: 0;
+}
+
+#search input {
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  width: 30%;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  background: transparent;
+}
+
+#search input::placeholder {
+  font-size: 1rem;
+  color: #fff;
+}
+
+#search button {
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+}
+/*# sourceMappingURL=style.css.map */
