@@ -6,7 +6,7 @@
 
 ## Live Link
 
-- Live: [DEMO](https://rawcdn.githack.com/MahmoudBakr23/weather-app/f83f5189391535c9fdc2a86829d8733a93982023/dist/index.html)
+- Live: [DEMO](https://rawcdn.githack.com/MahmoudBakr23/weather-app/a0d4648c60d6b53f5c03eaa34c149ca69cb09f0b/dist/index.html)
 
 ## Built with
 
