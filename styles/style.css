@@ -6,16 +6,18 @@
 
 html,
 body {
-  background-image: url(../images/bg.jpg);
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
-  padding: 1rem;
   background-color: black;
   font-family: sans-serif;
-  color: #fff;
+  color: #333;
 }
 
 #search {
-  margin: 2rem 0;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
@@ -27,10 +29,14 @@ body {
   outline: 0;
 }
 
+#search input:focus,
+#search button:focus {
+  outline: none;
+  border: none;
+}
+
 #search input {
-  border-bottom-left-radius: 50px;
-  border-top-left-radius: 50px;
-  width: 30%;
+  width: 50%;
   color: #fff;
   font-weight: 900;
   font-size: 1.1rem;
@@ -42,9 +48,45 @@ body {
   color: #fff;
 }
 
+#search input:focus {
+  border-top: 2px solid #fff;
+}
+
 #search button {
   cursor: pointer;
   background-color: transparent;
   color: #fff;
   font-size: 1.1rem;
 }
+
+#result {
+  margin: 5rem auto;
+  color: #fff;
+  animation: popout transform 2s ease-in;
+}
+
+#result img {
+  height: 64px;
+}
+
+#result .icon {
+  font-size: 2.5rem;
+}
+
+#result .thermo {
+  transform: rotate(30deg);
+}
+
+#result .card-body {
+  color: #333;
+}
+
+@keyframes popout {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */

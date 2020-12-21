@@ -4,33 +4,45 @@
   \**********************/
 const searchForm = document.getElementById('search');
 const searchInput = document.getElementById('search-word');
-const mainTitle = document.querySelector('h3');
-const temp = document.querySelector('h4');
+const mainTitle = document.querySelector('.city');
+const temp = document.querySelector('.temp');
 const img = document.querySelector('img');
-const desc = document.querySelector('p');
-const any = document.querySelector('h5');
+const desc = document.querySelector('.desc');
+const country = document.querySelector('.country');
 const errorMsg = document.getElementById('error');
-
+const main = document.querySelector('.main');
+const wind = document.querySelector('.wind');
+const hum = document.querySelector('.hum');
 function errorMsgs() {
   errorMsg.innerHTML = `
   'Name not found! Please try again.'
 `;
+  setTimeout(() => { errorMsg.innerHTML = ''; }, 3000);
 }
 
 function displayData(data) {
   mainTitle.innerHTML = `
-  ${data.name}
+    ${data.name} /
 `;
   temp.innerHTML = `
-  ${Math.round(data.main.temp)} F
+    ${Math.round(data.main.temp)} F°
 `;
   img.src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
   img.classList.remove('d-none');
-  any.innerHTML = `
-  ${data.sys.country}
+  country.innerHTML = `
+    ${data.sys.country}
 `;
   desc.innerHTML = `
-  The weather in your region is ${data.weather[0].description.toUpperCase()}!
+    ${data.weather[0].description.toUpperCase()}
+`;
+  main.innerHTML = `
+    ${data.weather[0].main}
+`;
+  wind.innerHTML = `
+    ${Math.round(data.wind.speed)} / mph
+`;
+  hum.innerHTML = `
+    ${data.main.humidity}%
 `;
 }
 
